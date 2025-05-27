@@ -6,7 +6,7 @@ title: TUM Legal Tech Group # the website title (if blank, full name will be use
 first_name: Matthias
 middle_name: null
 last_name: Grabmair
-email: matthias.grabmair@tum.de
+email: TODO add general mail
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   The official webpage of the TUM Legal Tech research group.
 footer_text: >
@@ -107,6 +107,9 @@ wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.
 contact_note: >
   Send us an email!
 
+address: >
+  Boltzmannstr. 3/I 85748 Garching, Germany
+
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
@@ -178,6 +181,16 @@ collections:
   teaching:
     output: true
     permalink: /teaching/:path/
+  funding:
+    defaults:
+      layout: funding-post
+    output: true
+    permalink: /funding/:path
+  team:
+    defaults:
+      layout: post
+    output: true
+    permalink: /team/:path
     
 announcements:
   enabled: true
@@ -188,6 +201,11 @@ latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
+
+research_supporters:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit:  # leave blank to include all the blog posts
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -316,7 +334,7 @@ max_author_limit: 3  # leave blank to always show all authors
 more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
-enable_publication_thumbnails: true
+enable_publication_thumbnails: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes

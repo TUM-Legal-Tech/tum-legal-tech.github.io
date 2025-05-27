@@ -12,7 +12,7 @@ profiles:
   - align: right
     image: matthias.jpeg
     content: about_matthias.md
-    image_circular: false # crops the image to make it circular
+    image_circular: true # crops the image to make it circular
     more_info: >
       <p>Professor Matthias Grabmair</p>
       <p>matthias.grabmair@tum.de</p>

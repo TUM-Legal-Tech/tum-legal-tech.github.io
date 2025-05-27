@@ -3,49 +3,104 @@ layout: page
 ---
 
 <!-- about.html -->
-      <div class="post">
+<div class="post">
 
-        <article>
-          {% if page.profiles -%}
-          {% for profile in page.profiles %}
-          <hr>
-          <div class="profile float-{%- if profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if profile.image %}
-              {%- assign profile_image_path = profile.image | prepend: 'assets/img/' -%}
-
-              {% if profile.image_circular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
-
-              {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-
-              {% include figure.html
-                path = profile_image_path
-                class = profile_image_class
-                sizes = sizes
-                alt = profile.image 
-              %}
-            {% endif -%}
-            {%- if profile.more_info %}
-            <div class="more-info">
-              {{ profile.more_info }}
-            </div>
-            {%- endif %}
-          </div>
-
-          <div class="clearfix">
-            {% if profile.content -%}
-            {% capture profile_content %}{%- include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
+  <article>
+    {% if page.profiles -%}
+    {% assign order = "Research Group Lead,Research Associates,Nonresident Fellows,Student Research Assistants,Administrative Support,Alumni" | split: "," %}
+    {% assign grouped_profiles = site.team | group_by: "category" %}
+    {% for group in grouped_profiles %}
+    <h2>{{ group.name }}</h2>
+    <div class="grid">
+      {% for profile in group.items %}
+      <article class="grid-item card">
+        {% if profile.picture -%}
+        <img class="avatar" src="/assets/img/{{profile.picture}}" alt="Portrait ({{profile.name}})" width="auto"
+          height="auto">
+        {%- else -%}
+        <img class="avatar" src="/assets/img/mainlp-logo-500.png" alt="Portrait ({{profile.name}})" width="auto"
+          height="auto">
+        {%- endif -%}
+        <div class="card-body">
+          <!-- <h2 class="card-title">{{profile.name}}</h2> -->
+          <h2 class="card-title">
+            {% if profile.website -%}
+            <a href="{{profile.website}}">{{profile.name}}</a>
             {%- else -%}
-            {{ content }}
-            {%- endif %}
+            {{profile.name}}
+            {%- endif -%}
+          </h2>
+          <div class="card-text">
+            {{profile.description}}
+            <!-- <p style="margin-bottom: 0rem;">{{profile.description}}</p> 
+              <ul class="network-icon" aria-hidden="true">
+              {% if profile.website -%}
+                <li><a href="{{profile.website}}"><i class="fas fa-globe"></i></a></li>
+              {%- endif -%}
+              {% if profile.email -%}
+                <li><a role="button" class="email" style="color: var(--global-theme-color)"><i class="fas fa-envelope"></i></a></li>
+              {%- endif -%}
+              {% if profile.googlescholar -%}
+                <li><a href="{{profile.googlescholar}}"><i class="ai ai-google-scholar"></i></a></li>
+              {%- endif -%}
+              {% if profile.github -%}
+                <li><a href="{{profile.github}}"><i class="fab fa-github"></i></a></li>
+              {%- endif -%}
+              {% if profile.twitter -%}
+                <li><a href="{{profile.twitter}}"><i class="fab fa-twitter"></i></a></li>
+              {%- endif -%}
+            </ul>
+            {% if profile.email -%}
+              <div class="email hidden">
+                <p>{{ profile.email }}</p>
+              </div>
+            {%- endif -%} -->
           </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    {% for profile in page.profiles %}
+    <hr>
+    <div class="profile float-{%- if profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+      {%- if profile.image %}
+      {%- assign profile_image_path = profile.image | prepend: 'assets/img/' -%}
 
-          {% endfor %}
-          {%- endif %}
-        </article>
+      {% if profile.image_circular %}
+      {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
+      {% else %}
+      {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
+      {% endif %}
+
+      {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width:
+      576px) 30vw, 95vw"{% endcapture %}
+
+      {% include figure.html
+      path = profile_image_path
+      class = profile_image_class
+      sizes = sizes
+      alt = profile.image
+      %}
+      {% endif -%}
+      {%- if profile.more_info %}
+      <div class="more-info">
+        {{ profile.more_info }}
+      </div>
+      {%- endif %}
+    </div>
+
+    <div class="clearfix">
+      {% if profile.content -%}
+      {% capture profile_content %}{%- include_relative {{ profile.content }} %}{% endcapture %}
+      {{ profile_content | markdownify }}
+      {%- else -%}
+      {{ content }}
+      {%- endif %}
+    </div>
+
+    {% endfor %}
+    {%- endif %}
+  </article>
 
 </div>
