@@ -11,6 +11,7 @@ $(document).ready(function() {
     if($(this).parents('[class*="news"]').length==0 &&
         $(this).parents('[class*="card"]').length==0 &&
         $(this).parents('[class*="funding"]').length==0 &&
+        $(this).parents('[class*="social"]').length==0 &&
         $(this).parents('code').length == 0) {
       // make table use bootstrap-table
       $(this).attr('data-toggle','table');
