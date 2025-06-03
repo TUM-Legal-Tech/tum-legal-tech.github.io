@@ -261,11 +261,13 @@ blockquote {
 
 .image-link img {
   transition: transform 0.3s ease;
-  display: block;        /* Remove extra whitespace */
+  display: block;
+  /* Remove extra whitespace */
 }
 
 .image-link img:hover {
-  transform: scale(1.05);  /* Slight zoom effect */
+  transform: scale(1.05);
+  /* Slight zoom effect */
 }
 
 
@@ -485,8 +487,8 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 0.9rem;
 }
 
@@ -681,63 +683,90 @@ footer.sticky-bottom {
 }
 
 // People
-
+$card-column-width: 150px;
 .people {
+  h2.category {
+    color: var(--global-theme-color);
+    font-size: 2rem;
+    text-align: right;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $card-column-width);
+    grid-template-rows: repeat(auto-fill, max-content);
+    gap: 2rem; // Explicit gap between items
+    width: 100%; // Ensure the grid takes full width
+    margin: 0; // Remove any margin
+    padding: 0; // Remove any padding
+    justify-content: space-between; // Distribute items evenly
+  }
+
+  .grid-sizer,
+  .grid-item {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    max-width: $card-column-width;
+    width: 100%;
+    max-height: 250px;
+    height: 100%;
+  }
+
+  .card {
+    align-items: center;
+    background-color: var(--global-bg-color);
+    box-shadow: none;
+
+    .card-photo {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-body {
+      text-align: center;
+      padding: 1rem;
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .card-text {
+        font-size: 0.875rem;
+        color: var(--global-text-color-light);
+      }
+    }
+  }
 
   a {
     text-decoration: none;
+    width: min-content;
 
     &:hover {
       .card-title {
         color: var(--global-theme-color);
       }
+
+      .card-photo {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
     }
   }
 
-  .card-photo {
-    width: 150px;;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card-item {
-    width: auto;
-    margin-bottom: 10px;
-
-    .row {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .grid-sizer,
-  .grid-item {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-
-  h2.category {
-    color: var(--global-divider-color);
-    border-bottom: 1px solid var(--global-divider-color);
-    padding-top: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    text-align: right;
-  }
-
-  h2.card-title {
-    font-size: 1rem;
-  }
 }
 
 
