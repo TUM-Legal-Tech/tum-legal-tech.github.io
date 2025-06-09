@@ -3,7 +3,7 @@ layout: profiles
 title: Shanshan Xu
 name: Shanshan Xu
 description: Ph.D. Student
-picture: shanshan.jpeg
+img: /assets/img/shanshan.jpeg
 tags: formatting links
 category: Research Associates
 permalink: /people/shanshan-xu/

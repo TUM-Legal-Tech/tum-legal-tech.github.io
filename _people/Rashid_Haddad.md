@@ -3,7 +3,7 @@ layout: profiles
 title: Rashid Haddad
 name: Rashid Haddad
 description: MS in Informatics, Student Research Assistant
-picture: rashid.jpeg
+img: /assets/img/rashid.jpeg
 tags: formatting links
 category: Student Research Assistants
 permalink: /people/rashid-haddad/

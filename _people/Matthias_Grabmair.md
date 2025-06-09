@@ -3,7 +3,7 @@ layout: profiles
 title: Matthias Grabmair
 name:  Matthias Grabmair
 description: Prof., Ph.D., LL.M.
-picture: matthias.jpeg
+img: /assets/img/matthias.jpeg
 tags: formatting links
 category: Research Group Lead
 permalink: /people/matthias-grabmair/

@@ -3,7 +3,7 @@ layout: profiles
 title: Santosh Tokala
 name: Santosh Tokala
 description: Ph.D. Student
-picture: santosh.jpeg
+img: /assets/img/santosh.jpeg
 tags: formatting links
 category: Research Associates
 permalink: /people/santosh-tokala/
