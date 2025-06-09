@@ -171,9 +171,6 @@ blockquote {
 }
 
 .card-body {
-  padding-top: 1.25rem;
-  padding-right: 30px;
-  padding-left: 0px;
   text-align: center;
 }
 
@@ -684,6 +681,7 @@ footer.sticky-bottom {
 
 // People
 $card-column-width: 150px;
+
 .people {
   h2.category {
     color: var(--global-theme-color);
@@ -769,6 +767,70 @@ $card-column-width: 150px;
 
 }
 
+// Teaching
+
+.teaching {
+  .course-tags .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      .card-title {
+        color: var(--global-theme-color);
+      }
+
+      .card {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  .card {
+    img {
+      width: 100%;
+    }
+    transition: transform 0.3s ease;
+  }
+
+  .card-item {
+    width: auto;
+    margin-bottom: 10px;
+
+    .row {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .card-title {
+    color: var(--global-text-color);
+    font-size: 1.25rem;
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: 250px;
+    margin-bottom: 10px;
+  }
+
+  h2.category {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+}
 
 // Publications
 
