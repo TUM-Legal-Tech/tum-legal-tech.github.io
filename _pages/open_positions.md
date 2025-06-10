@@ -6,3 +6,4 @@ permalink: /open_positions/
 nav: true
 nav_order: 5
 ---
+Currently there are no open positions.
