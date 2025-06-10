@@ -1,7 +1,7 @@
 ---
 layout: profiles
-title: Santosh Tokala
-name: Santosh Tokala
+title: Tokala Santosh
+name: Tokala Santosh
 description: Ph.D. Student
 img: /assets/img/santosh.jpeg
 tags: formatting links
